@@ -1,0 +1,8 @@
+name = "jarbot"
+main = "./src/server.js"
+compatibility_date="2024-08-05"
+
+# [secrets]
+# DISCORD_TOKEN
+# DISCORD_PUBLIC_KEY
+# DISCORD_APPLICATION_ID
