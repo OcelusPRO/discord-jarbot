@@ -5,9 +5,8 @@
 import { AutoRouter } from 'itty-router';
 import {InteractionResponseType, InteractionType, verifyKey,} from 'discord-interactions';
 import { JsonResponse } from './utils/JsonResponse.js'
-import { init, commands } from "./init.js";
+import { Commands } from './utils/loadCommands.js'
 
-await init()
 const router = AutoRouter();
 
 /**
@@ -32,7 +31,7 @@ router.post('/', async (request, env) => {
     if (interaction.type === InteractionType.APPLICATION_COMMAND) {
         // Most user commands will come as `APPLICATION_COMMAND`.
 
-        const cmd = commands.find( c=> c.data.name.toLowerCase() === interaction.data.name.toLowerCase() );
+        const cmd = Commands.find( c=> c.data.name.toLowerCase() === interaction.data.name.toLowerCase() );
         if (cmd) return cmd.execute(interaction);
         else return new JsonResponse({ error: 'Unknown Type' }, { status: 400 });
     }
