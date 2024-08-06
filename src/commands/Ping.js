@@ -1,4 +1,4 @@
-import { InteractionResponseType } from "discord-interactions"
+import {InteractionResponseFlags, InteractionResponseType} from "discord-interactions"
 import { JsonResponse } from "../utils/JsonResponse.js"
 
 export const Ping = {
@@ -12,6 +12,7 @@ export const Ping = {
             type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
             data: {
                 content: '0ms tkt',
+                flags: InteractionResponseFlags.EPHEMERAL,
             }
         })
     }
