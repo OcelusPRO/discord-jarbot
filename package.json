@@ -19,7 +19,6 @@
   "license": "MIT",
   "dependencies": {
     "discord-interactions": "^4.0.0",
-    "glob": "^11.0.0",
     "itty-router": "^5.0.9"
   },
   "devDependencies": {

@@ -1,5 +1,6 @@
 import {InteractionResponseFlags, InteractionResponseType} from "discord-interactions"
 import { JsonResponse } from "../utils/JsonResponse.js"
+import {getLangByCode} from "../utils/langs.js";
 
 export const Ping = {
     data : {
@@ -11,7 +12,7 @@ export const Ping = {
         return new JsonResponse({
             type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
             data: {
-                content: '0ms tkt',
+                content: '0ms tkt'.translate('commands.ping.response', getLangByCode(interaction.locale)),
                 flags: InteractionResponseFlags.EPHEMERAL,
             }
         })
